@@ -9,4 +9,22 @@
     max-width: 1024px;
     margin: 0 auto;
   }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 0;
+
+    h2 {
+      font-weight: 700;
+      font-size: 2em;
+      font-style: italic;
+      text-align: left;
+    }
+  }
+
+  .light-text {
+    font-weight: 400;
+  }
 }

@@ -1,38 +1,40 @@
-a {
-  text-decoration: none;
-  color: #000;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
 .sneaker {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   text-align: left;
   max-width: 280px;
   padding: 1em;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
-  img {
-    width: 100%;
-    max-width: 280px;
+  .image {
+    img {
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .no-image {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
   }
 
   .info {
     display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
+    margin: 0 0 1rem;
 
-    h5 {
-      font-weight: 400;
-    }
-
-    p {
+    .title {
       font-weight: 600;
-      flex: 1 0 auto;
     }
+
+    .color {
+      color: grey;
+    }
+  }
+
+  .price {
+    font-weight: 600;
   }
 }
