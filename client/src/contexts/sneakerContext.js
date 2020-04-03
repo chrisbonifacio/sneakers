@@ -5,12 +5,21 @@ export const sneakerContext = createContext()
 
 export default function SneakerProvider({ children }) {
   const [sneakers, setSneakers] = useState([])
+  const [query, setQuery] = useState({
+    name: "",
+    page: 0,
+    limit: 10
+  })
+
+  const [fetching, setFetching] = useState(false)
+
+  const { name, page, limit } = query
 
   useEffect(() => {
     async function getSneakers() {
       try {
         const sneakerData = await axiosWithAuth().get(
-          "/sneakers?limit=10&page=10"
+          `/sneakers?limit=${limit}&name=${name}&page=${page}`
         )
         setSneakers(sneakerData.data.results)
       } catch (error) {
@@ -18,10 +27,10 @@ export default function SneakerProvider({ children }) {
       }
     }
     getSneakers()
-  }, [])
+  }, [query])
 
   return (
-    <sneakerContext.Provider value={sneakers}>
+    <sneakerContext.Provider value={{ sneakers, setQuery }}>
       {children}
     </sneakerContext.Provider>
   )
