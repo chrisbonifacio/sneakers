@@ -8,6 +8,7 @@
   .container {
     max-width: 1024px;
     margin: 0 auto;
+    padding: 0 1em;
   }
 
   .header {
@@ -16,15 +17,48 @@
     align-items: center;
     padding: 1.5em 0;
 
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+
     h2 {
       font-weight: 700;
       font-size: 2em;
       font-style: italic;
       text-align: left;
+
+      @media screen and (max-width: 600px) {
+        margin-bottom: 1rem;
+      }
     }
   }
 
   .light-text {
     font-weight: 400;
+  }
+
+  // buttons
+  .btn {
+    border: none;
+    background: none;
+    border: 1px solid #000;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: lightseagreen;
+      color: #fff;
+      border-color: lightseagreen;
+    }
+  }
+
+  .remove {
+    &:hover {
+      background: orangered;
+      border-color: orangered;
+    }
   }
 }
