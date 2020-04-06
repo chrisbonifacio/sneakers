@@ -10,9 +10,9 @@ import UserProvider from "./contexts/userContext"
 
 function App() {
   return (
-    <div className="App">
-      <UserProvider>
-        <SneakerProvider>
+    <UserProvider>
+      <SneakerProvider>
+        <div className="App">
           <Navbar />
           <div className="nav-spacer"></div>
           <div className="container">
@@ -28,9 +28,9 @@ function App() {
               </Route>
             </Switch>
           </div>
-        </SneakerProvider>
-      </UserProvider>
-    </div>
+        </div>
+      </SneakerProvider>
+    </UserProvider>
   )
 }
 
