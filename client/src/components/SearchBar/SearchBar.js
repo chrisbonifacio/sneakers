@@ -29,6 +29,7 @@ export default function SearchBar() {
         <label htmlFor="search">
           <SearchIcon />
         </label>
+
         <input
           type="text"
           name="search"
