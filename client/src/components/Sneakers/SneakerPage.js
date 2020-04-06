@@ -23,7 +23,7 @@ export default function SneakerPage(props) {
   })
   const match = useRouteMatch()
   const id = match.params.id
-  const user = useContext(userContext)
+  const { addToCart } = useContext(userContext)
 
   useEffect(() => {
     async function getSneaker() {
@@ -37,13 +37,6 @@ export default function SneakerPage(props) {
     }
     getSneaker()
   }, [])
-
-  function addToCart() {
-    const cart = user.cart
-    console.log(cart)
-  }
-
-  console.log(sneaker)
 
   return (
     <div className="sneaker-container">
@@ -69,7 +62,7 @@ export default function SneakerPage(props) {
               </span>
             </p>
           </div>
-          <button className="cart-btn" onClick={addToCart}>
+          <button className="btn" onClick={() => addToCart(sneaker)}>
             Add to Cart
           </button>
         </div>
