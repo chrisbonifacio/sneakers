@@ -19,6 +19,7 @@
       align-items: center;
 
       a {
+        color: #000;
         text-decoration: none;
         &:visited {
           color: #000;
@@ -43,6 +44,28 @@
 
           &.active {
             color: lightseagreen;
+          }
+        }
+
+        .cart-link {
+          position: relative;
+
+          .cart-counter {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: -12px;
+            right: -12px;
+            background: red;
+            border-radius: 50px;
+            height: 20px;
+            width: 20px;
+
+            span {
+              color: #fff;
+              font-weight: 600;
+            }
           }
         }
       }
