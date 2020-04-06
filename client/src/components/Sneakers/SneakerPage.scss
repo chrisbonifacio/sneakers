@@ -11,6 +11,10 @@
     justify-content: center;
     align-items: center;
 
+    @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+
     .image {
       img {
         width: 100%;
@@ -21,10 +25,18 @@
       padding-left: 1.5em;
       text-align: left;
 
+      @media screen and (max-width: 600px) {
+        padding: 0;
+      }
+
       h2 {
         font-size: 2.5em;
         font-weight: 600;
         margin: 0 0 1rem;
+
+        @media screen and (max-width: 600px) {
+          font-size: 1.5em;
+        }
       }
 
       .price {
@@ -32,23 +44,6 @@
           font-size: 1.2em;
           font-weight: 600;
           margin: 0 0 1rem;
-        }
-      }
-
-      .cart-btn {
-        border: none;
-        background: none;
-        border: 1px solid #000;
-        border-radius: 50px;
-        padding: 0.5rem 1rem;
-        font-size: 1.2em;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          background: lightseagreen;
-          color: #fff;
-          border-color: lightseagreen;
         }
       }
     }
