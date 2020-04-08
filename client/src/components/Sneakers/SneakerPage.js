@@ -5,22 +5,7 @@ import { useRouteMatch } from "react-router-dom"
 import "./SneakerPage.scss"
 
 export default function SneakerPage(props) {
-  const [sneaker, setSneaker] = useState({
-    id: "",
-    brand: "",
-    colorway: "",
-    gender: "",
-    media: {
-      imageUrl: "",
-      smallImageUrl: "",
-      thumbUrl: ""
-    },
-    releaseDate: "",
-    retailPrice: 0,
-    styleId: "",
-    title: "",
-    year: 2020
-  })
+  const [sneaker, setSneaker] = useState(null)
   const match = useRouteMatch()
   const id = match.params.id
   const { addToCart } = useContext(userContext)
@@ -40,33 +25,37 @@ export default function SneakerPage(props) {
 
   return (
     <div className="sneaker-container">
-      <div className="sneaker-grid">
-        <div className="image">
-          <img
-            src={
-              sneaker.media
-                ? sneaker.media.smallImageUrl
-                : "https://schulershoes-magento.s3.amazonaws.com/pub/media/catalog/product/placeholder/default/PLACEHOLDER.jpg"
-            }
-            alt={sneaker.title}
-          />
-        </div>
-
-        <div className="info">
-          <h2>{sneaker.title}</h2>
-          <div className="price">
-            <p>
-              Price:{" "}
-              <span className="light-text">
-                ${sneaker.retailPrice ? sneaker.retailPrice : 99}
-              </span>
-            </p>
+      {sneaker ? (
+        <div className="sneaker-grid">
+          <div className="image">
+            <img
+              src={
+                sneaker.media
+                  ? sneaker.media.smallImageUrl
+                  : "https://schulershoes-magento.s3.amazonaws.com/pub/media/catalog/product/placeholder/default/PLACEHOLDER.jpg"
+              }
+              alt={sneaker.title}
+            />
           </div>
-          <button className="btn" onClick={() => addToCart(sneaker)}>
-            Add to Cart
-          </button>
+
+          <div className="info">
+            <h2>{sneaker.title}</h2>
+            <div className="price">
+              <p>
+                Price:{" "}
+                <span className="light-text">${sneaker.retailPrice}</span>
+              </p>
+            </div>
+            <button className="btn" onClick={() => addToCart(sneaker)}>
+              Add to Cart
+            </button>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="header">
+          <h2>Loading...</h2>
+        </div>
+      )}
     </div>
   )
 }
