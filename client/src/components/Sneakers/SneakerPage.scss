@@ -1,0 +1,50 @@
+.sneaker-container {
+  margin: 1em 0;
+
+  h2 {
+    text-align: left;
+  }
+
+  .sneaker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+
+    .image {
+      img {
+        width: 100%;
+      }
+    }
+
+    .info {
+      padding-left: 1.5em;
+      text-align: left;
+
+      @media screen and (max-width: 600px) {
+        padding: 0;
+      }
+
+      h2 {
+        font-size: 2.5em;
+        font-weight: 600;
+        margin: 0 0 1rem;
+
+        @media screen and (max-width: 600px) {
+          font-size: 1.5em;
+        }
+      }
+
+      .price {
+        p {
+          font-size: 1.2em;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
