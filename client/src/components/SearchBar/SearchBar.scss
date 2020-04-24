@@ -1,6 +1,7 @@
 .search-bar {
   display: flex;
   width: 50%;
+
   @media screen and (max-width: 600px) {
     width: 100%;
   }
@@ -9,7 +10,9 @@
     display: flex;
     width: 100%;
 
-    label {
+    button {
+      background: none;
+      border: none;
       min-width: 5%;
       max-width: 25px;
       margin-right: 5px;
@@ -26,6 +29,10 @@
 
       @media screen and (max-width: 600px) {
         width: 100%;
+        font-size: 1em;
+        border-radius: 0;
+        padding: 0.5em;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
       }
 
       &:focus {
