@@ -8,7 +8,7 @@ export default function SneakerProvider({ children }) {
   const [query, setQuery] = useState({
     name: "",
     page: 0,
-    limit: 12
+    limit: 50,
   })
 
   const [fetching, setFetching] = useState(false)
