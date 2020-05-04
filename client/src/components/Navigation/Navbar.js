@@ -6,7 +6,7 @@ import { userContext } from "../../contexts/userContext"
 import "./Navbar.scss"
 
 let icon = {
-  size: "1.3em"
+  size: "1.3em",
 }
 
 const CartIcon = styled(ShoppingCart)`
@@ -24,7 +24,7 @@ export default function Navbar() {
       <header>
         <nav>
           <div className="logo">
-            <NavLink to="/">Sneakers</NavLink>
+            <NavLink to="/">Kicks</NavLink>
           </div>
           <div className="links">
             <NavLink to="/sneakers">
