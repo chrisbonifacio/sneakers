@@ -4,7 +4,7 @@ import "./CartItem.scss"
 
 export default function CartItem({ item }) {
   const { user, removeFromCart } = useContext(userContext)
-  const itemInCart = user.cart.items.find(cur => cur.id === item.id)
+  const itemInCart = user.cart.items.find((cur) => cur.id === item.id)
   const { title, colorway, retailPrice, quantity } = itemInCart
 
   return (
@@ -14,7 +14,7 @@ export default function CartItem({ item }) {
           <img src={item.media.thumbUrl} alt={item.title} />
         </div>
         <div class="info">
-          <h3 className="title">{title}</h3>
+          <h2 className="title">{title}</h2>
           <p>
             Color: <span className="color">{colorway}</span>
           </p>
