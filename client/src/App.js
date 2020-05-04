@@ -1,6 +1,7 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
 import "./App.scss"
+import Home from "./components/Home/Home"
 import Navbar from "./components/Navigation/Navbar"
 import Cart from "./components/ShoppingCart/Cart"
 import SneakerList from "./components/Sneakers/SneakerList"
@@ -15,8 +16,11 @@ function App() {
         <div className="App">
           <Navbar />
           <div className="nav-spacer"></div>
-          <div className="container">
-            <Switch>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <div className="container">
               <Route path="/cart">
                 <Cart />
               </Route>
@@ -26,8 +30,8 @@ function App() {
               <Route path="/sneakers/:id">
                 <SneakerPage />
               </Route>
-            </Switch>
-          </div>
+            </div>
+          </Switch>
         </div>
       </SneakerProvider>
     </UserProvider>
