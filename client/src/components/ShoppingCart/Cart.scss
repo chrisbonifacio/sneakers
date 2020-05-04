@@ -2,17 +2,18 @@
   text-align: right;
 
   .empty-cart {
-    font-size: 1.5em;
+    font-size: 2.5em;
     font-style: italic;
     text-align: center;
   }
 
   .cart-total {
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
     span {
       font-weight: 400;
-      font-size: 1.5rem;
+      font-size: 2.5rem;
     }
   }
 }
