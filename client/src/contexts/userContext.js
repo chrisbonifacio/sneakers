@@ -7,8 +7,8 @@ export default function UserProvider({ children }) {
     id: 1,
     cart: {
       items: [],
-      total: 0
-    }
+      total: 0,
+    },
   })
 
   function addToCart(item) {
@@ -18,7 +18,7 @@ export default function UserProvider({ children }) {
     let newUser = { ...user }
 
     // check for item in cart
-    let itemInCart = prevUser.cart.items.findIndex(cur => cur.id === item.id)
+    let itemInCart = prevUser.cart.items.findIndex((cur) => cur.id === item.id)
 
     if (itemInCart !== -1) {
       // if item is in cart, update quantity
@@ -36,12 +36,19 @@ export default function UserProvider({ children }) {
   }
 
   function removeFromCart(item) {
-    let prevUser = user
-    let newUser = { ...user }
-    newUser.cart.items = prevUser.cart.items.filter(cur => cur.id !== item.id)
-    newUser.cart.total = Math.min(0, prevUser.cart.total - item.retailPrice)
-
-    setUser(newUser)
+    setUser((prevUser) => {
+      return {
+        ...prevUser,
+        cart: {
+          ...prevUser.cart,
+          items: [...prevUser.cart.items].filter(({ id }) => item.id !== id),
+          total: Math.max(
+            0,
+            prevUser.cart.total - item.retailPrice * item.quantity
+          ),
+        },
+      }
+    })
   }
 
   return (

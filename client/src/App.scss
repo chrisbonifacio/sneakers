@@ -1,6 +1,27 @@
 .App {
   text-align: center;
 
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 1.8em;
+  }
+
+  h5 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1.6em;
+    line-height: 1.5;
+  }
+
   .nav-spacer {
     height: 50px;
   }
@@ -23,7 +44,6 @@
 
     h2 {
       font-weight: 700;
-      font-size: 2em;
       font-style: italic;
       text-align: left;
 
@@ -41,11 +61,11 @@
   .btn {
     border: none;
     background: none;
-    margin: 1rem 0;
+    margin: 0;
     border: 1px solid #000;
     border-radius: 50px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2em;
+    padding: 1rem 2rem;
+    font-size: 2em;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 

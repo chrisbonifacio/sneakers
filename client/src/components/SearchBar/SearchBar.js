@@ -26,10 +26,9 @@ export default function SearchBar() {
   return (
     <div className="search-bar">
       <form onSubmit={submitHandler}>
-        <label htmlFor="search">
+        <button type="submit" htmlFor="search">
           <SearchIcon />
-        </label>
-
+        </button>
         <input
           type="text"
           name="search"
